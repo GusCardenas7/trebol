@@ -1,0 +1,15 @@
+---
+import astroLogo from "../../assets/astro.svg";
+import NavBar from "./NavBar.jsx";
+---
+
+<header class="bg-primary w-full text-white">
+  <nav class="mx-auto max-w-7xl px-12 py-4">
+    <div class="flex items-center justify-between">
+      <a href="/"
+        ><img src={astroLogo.src} alt="Trebol Logo" class="h-12 w-auto" /></a
+      >
+      <NavBar client:load />
+    </div>
+  </nav>
+</header>
