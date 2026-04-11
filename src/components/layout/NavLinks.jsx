@@ -1,43 +1,6 @@
-export default function NavLinks({ open }) {
-  const navItems = [
-    {
-      id: 0,
-      title: "Inicio",
-      label: "Inicio",
-      url: "/",
-    },
-    {
-      id: 1,
-      title: "Nosotros",
-      label: "Nosotros",
-      url: "/about",
-    },
-    {
-      id: 2,
-      title: "Desarrollo",
-      label: "Desarrollo",
-      url: "/products",
-    },
-    {
-      id: 3,
-      title: "Tecnología",
-      label: "Tecnología",
-      url: "/technology",
-    },
-    {
-      id: 4,
-      title: "Contacto",
-      label: "Contacto",
-      url: "/contact",
-    },
-    {
-      id: 5,
-      title: "FAQ'S",
-      label: "FAQ'S",
-      url: "/faq",
-    },
-  ];
+import { navItems } from "../../lib/utils/navItems.js";
 
+export default function NavLinks({ open }) {
   return (
     <div
       className={`bg-primary linear w-full flex-col items-end gap-4 overflow-hidden transition-all duration-300 ${

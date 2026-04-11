@@ -1,5 +1,5 @@
-import MenuIcon from "../../assets/icons/MaterialSymbolsMenu.svg";
-import CloseMenuIcon from "../../assets/icons/GridiconsCross.svg";
+import MenuIcon from "../../assets/icons/menu.svg";
+import CloseMenuIcon from "../../assets/icons/closeMenu.svg";
 
 export default function MenuButton({ open, setOpen }) {
   return (
