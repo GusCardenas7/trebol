@@ -8,9 +8,11 @@ import Copyright from "./Copyright.jsx";
 ---
 
 <footer class="bg-primary w-full text-white">
-  <div class="mx-auto max-w-7xl px-12 py-4">
-    <div class="grid grid-cols-1 gap-4 text-justify md:grid-cols-6 md:gap-12">
-      <div class="md:col-span-2">
+  <div class="mx-auto max-w-7xl px-8 py-4">
+    <div
+      class="grid grid-cols-1 gap-4 text-left md:grid-cols-4 md:gap-8 md:text-justify"
+    >
+      <div>
         <h4 class="text-2xl text-white">Nuestra Empresa</h4>
         <p class="mt-2 text-gray-300 md:mt-4">
           Somos una empresa dedicada a proporcionar soluciones innovadoras para
@@ -23,38 +25,44 @@ import Copyright from "./Copyright.jsx";
         <div class="mt-2 flex flex-col gap-4 text-gray-300 md:mt-4">
           {
             navItems.map((link) => (
-              <>
-                <a
-                  aria-label={link.label}
-                  href={link.url}
-                  class="hover:opacity-80"
-                >
-                  {link.title}
-                </a>
-              </>
+              <a
+                aria-label={link.label}
+                href={link.url}
+                class="hover:opacity-80"
+              >
+                {link.title}
+              </a>
             ))
           }
         </div>
       </div>
 
-      <div class="md:col-span-2">
+      <div>
         <h4 class="text-2xl text-white">Contacto</h4>
         <div class="mt-2 flex flex-col gap-4 text-gray-300 md:mt-4">
-          <span class="flex items-center gap-2"
-            ><img src={EmailIcon.src} alt="Email icon" class="h-5 w-5" /><p>
-              g.cardenas@trebol.com
-            </p></span
+          <span class="flex items-start gap-2"
+            ><img
+              src={EmailIcon.src}
+              alt="Email icon"
+              class="h-5 w-5 shrink-0"
+            /><a
+              href="mailto:g.cardenas@trebol.com"
+              class="truncate"
+              title="g.cardenas@trebol.com">g.cardenas@trebol.com</a
+            ></span
           >
-          <span class="flex items-center gap-2"
-            ><img src={PhoneIcon.src} alt="Phone icon" class="h-5 w-5" /><p>
-              +52 33 3233 4293
-            </p></span
+          <span class="flex items-start gap-2"
+            ><img
+              src={PhoneIcon.src}
+              alt="Phone icon"
+              class="h-5 w-5 shrink-0"
+            /><p>+52 33 3233 4293</p></span
           >
-          <span class="flex items-center gap-2"
+          <span class="flex items-start gap-2"
             ><img
               src={LocationIcon.src}
               alt="Location icon"
-              class="h-5 w-5"
+              class="h-5 w-5 shrink-0"
             /><p>
               Av. Patria 288, Jardines de la Patria, Zapopan, Jalisco. CP.
               45110.
@@ -68,19 +76,17 @@ import Copyright from "./Copyright.jsx";
         <div class="mt-2 flex gap-4 md:mt-4">
           {
             socialMediaItems.map((item) => (
-              <>
-                <a
-                  href={item.url}
-                  aria-label={item.label}
-                  class="transition-all duration-300 hover:scale-105 hover:opacity-80"
-                >
-                  <img
-                    src={item.icon.src}
-                    alt={item.alt}
-                    class="h-10 w-auto md:h-12"
-                  />
-                </a>
-              </>
+              <a
+                href={item.url}
+                aria-label={item.label}
+                class="transition-all duration-300 hover:scale-105 hover:opacity-80"
+              >
+                <img
+                  src={item.icon.src}
+                  alt={item.alt}
+                  class="h-10 w-10 object-contain"
+                />
+              </a>
             ))
           }
         </div>

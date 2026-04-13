@@ -4,12 +4,14 @@ import NavBar from "./NavBar.jsx";
 ---
 
 <header class="bg-primary w-full text-white">
-  <nav class="mx-auto max-w-7xl px-12 py-4">
+  <nav class="mx-auto max-w-7xl px-8 py-4">
     <div class="flex items-center justify-between">
-      <a href="/"
+      <a href="/" class="self-start"
         ><img src={astroLogo.src} alt="Trebol Logo" class="h-12 w-auto" /></a
       >
-      <NavBar client:load />
+      <div class="flex items-center">
+        <NavBar client:load />
+      </div>
     </div>
   </nav>
 </header>
