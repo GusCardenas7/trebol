@@ -1,7 +1,64 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/layout/Hero.astro";
+import CheckIcon from "../assets/icons/check.svg";
+
+const pageTitle = "Inicio";
+const heroText = "Trébol - Colecciones, dispositivos electrónicos y más";
+const typewriterText = "Conseguimos todo lo que necesitas";
+const typewriterSpeed = 80;
+const typewriterPause = 1000;
+
+const argumentItems = [
+  [
+    "Su visión, nuestra misión",
+    "Calidad garantizada en todo momento",
+    "Laboratorio propio de Desarrollo de Nuevos Productos",
+    "Servicio y atención personalizada",
+  ],
+  [
+    "Innovación en cada producto",
+    "Más de 3 décadas de experiencia",
+    "Centro de Ingeniería de pruebas propio",
+    "Ofrecemos un paquete completo en tus maquilas",
+  ],
+  [
+    "Proceso ágil y eficiente",
+    "Instalaciones Certificadas",
+    "Laboratorio de análisis de Calidad Propio",
+  ],
+];
 ---
 
-<BaseLayout>
-  <div><h1>Texto de ejemplo</h1></div>
+<BaseLayout pageTitle={pageTitle}>
+  <Hero
+    heroText={heroText}
+    typewriterText={typewriterText}
+    typewriterSpeed={typewriterSpeed}
+    typewriterPause={typewriterPause}
+  />
+  <div class="mx-auto max-w-7xl px-8 py-4">
+    <h2 class="text-center text-2xl">
+      ¿Por qué elegirnos para maquilar tus productos?
+    </h2>
+    <div class="mt-6 grid grid-cols-1 gap-4 md:mt-8 md:grid-cols-3 md:gap-6">
+      {
+        argumentItems.map((column) => (
+          <ul class="flex flex-col gap-4">
+            {column.map((text) => (
+              <li class="flex items-center gap-2 text-lg">
+                <img
+                  src={CheckIcon.src}
+                  alt=""
+                  aria-hidden="true"
+                  class="h-6 w-6"
+                />
+                {text}
+              </li>
+            ))}
+          </ul>
+        ))
+      }
+    </div>
+  </div>
 </BaseLayout>

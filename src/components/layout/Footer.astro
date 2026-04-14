@@ -28,7 +28,7 @@ import Copyright from "./Copyright.jsx";
               <a
                 aria-label={link.label}
                 href={link.url}
-                class="hover:opacity-80"
+                class="inline-block w-fit hover:opacity-80"
               >
                 {link.title}
               </a>
@@ -40,7 +40,7 @@ import Copyright from "./Copyright.jsx";
       <div>
         <h4 class="text-2xl text-white">Contacto</h4>
         <div class="mt-2 flex flex-col gap-4 text-gray-300 md:mt-4">
-          <span class="flex items-start gap-2"
+          <span class="flex items-center gap-2"
             ><img
               src={EmailIcon.src}
               alt="Email icon"
@@ -51,14 +51,14 @@ import Copyright from "./Copyright.jsx";
               title="g.cardenas@trebol.com">g.cardenas@trebol.com</a
             ></span
           >
-          <span class="flex items-start gap-2"
+          <span class="flex items-center gap-2"
             ><img
               src={PhoneIcon.src}
               alt="Phone icon"
               class="h-5 w-5 shrink-0"
             /><p>+52 33 3233 4293</p></span
           >
-          <span class="flex items-start gap-2"
+          <span class="flex items-center gap-2"
             ><img
               src={LocationIcon.src}
               alt="Location icon"
