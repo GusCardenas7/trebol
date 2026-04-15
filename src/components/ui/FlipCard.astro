@@ -3,9 +3,9 @@ const { frontImage, frontImageAlt, backImage, backText, backImageAlt } =
   Astro.props;
 ---
 
-<div class="group h-150 w-full max-w-100 perspective-[1000px]">
+<div class="flip-card group h-150 w-full max-w-100 perspective-[1000px]">
   <div
-    class="relative h-full w-full rounded-2xl shadow-xl transition-transform duration-700 transform-3d group-hover:transform-[rotateY(180deg)] group-focus:transform-[rotateY(180deg)] group-active:transform-[rotateY(180deg)]"
+    class="flip-inner relative h-full w-full rounded-2xl shadow-xl transition-transform duration-700 transform-3d group-hover:transform-[rotateY(180deg)]"
   >
     <!-- Frente -->
     <div class="absolute inset-0 backface-hidden">
@@ -31,3 +31,13 @@ const { frontImage, frontImageAlt, backImage, backText, backImageAlt } =
     </div>
   </div>
 </div>
+
+<script>
+  import "../../scripts/flipCardMobile.js";
+</script>
+
+<style>
+  .flip-card.flipped .flip-inner {
+    transform: rotateY(180deg);
+  }
+</style>
