@@ -1,0 +1,33 @@
+---
+const { frontImage, frontImageAlt, backImage, backText, backImageAlt } =
+  Astro.props;
+---
+
+<div class="group h-150 w-full max-w-100 perspective-[1000px]">
+  <div
+    class="relative h-full w-full rounded-2xl shadow-xl transition-transform duration-700 transform-3d group-hover:transform-[rotateY(180deg)]"
+  >
+    <!-- Frente -->
+    <div class="absolute inset-0 backface-hidden">
+      <img
+        src={frontImage.src}
+        alt={frontImageAlt}
+        loading="lazy"
+        class="h-full w-full rounded-2xl object-cover"
+      />
+    </div>
+
+    <!-- Reverso -->
+    <div
+      class="absolute inset-0 flex rotate-y-180 transform-[rotateY(180deg)] flex-col items-center justify-center rounded-2xl bg-white p-6 backface-hidden"
+    >
+      <img
+        src={backImage.src}
+        alt={backImageAlt}
+        loading="lazy"
+        class="h-12 w-12 object-contain"
+      />
+      <p class="mt-2 text-center text-2xl text-[#77808a]">{backText}</p>
+    </div>
+  </div>
+</div>

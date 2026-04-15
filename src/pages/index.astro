@@ -2,12 +2,49 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/layout/Hero.astro";
 import CheckIcon from "../assets/icons/check.svg";
+import FlipCard from "../components/ui/FlipCard.astro";
+import FeatureImage1 from "../assets/images/feature1.jpg";
+import BackFeatureImage1 from "../assets/images/backFeature1.png";
+import FeatureImage2 from "../assets/images/feature2.jpg";
+import BackFeatureImage2 from "../assets/images/backFeature2.png";
+import FeatureImage3 from "../assets/images/feature3.jpg";
+import BackFeatureImage3 from "../assets/images/backFeature3.png";
 
 const pageTitle = "Inicio";
 const heroText = "Trébol - Colecciones, dispositivos electrónicos y más";
 const typewriterText = "Conseguimos todo lo que necesitas";
 const typewriterSpeed = 80;
 const typewriterPause = 1000;
+
+const featureCards = [
+  {
+    id: 0,
+    frontImage: FeatureImage1,
+    frontImageAlt: "Feature image 1",
+    backText:
+      "Nuestra Experiencia y Reputación: 5 décadas en el mercado, pioneros en suplementos alimenticios.",
+    backImage: BackFeatureImage1,
+    backImageAlt: "Back feature image 1",
+  },
+  {
+    id: 1,
+    frontImage: FeatureImage2,
+    frontImageAlt: "Feature image 2",
+    backText:
+      "Capacidad de Innovación: Desarrollo de nuevos productos y fórmulas innovadoras.",
+    backImage: BackFeatureImage2,
+    backImageAlt: "Back feature image 2",
+  },
+  {
+    id: 2,
+    frontImage: FeatureImage3,
+    frontImageAlt: "Feature image 3",
+    backText:
+      "Flexibilidad en Producción: Capacidad para adaptar fórmulas y volúmenes según las necesidades del cliente.",
+    backImage: BackFeatureImage3,
+    backImageAlt: "Back feature image 3",
+  },
+];
 
 const argumentItems = [
   [
@@ -37,7 +74,7 @@ const argumentItems = [
     typewriterSpeed={typewriterSpeed}
     typewriterPause={typewriterPause}
   />
-  <div class="mx-auto max-w-7xl px-8 py-4">
+  <section class="mx-auto max-w-7xl px-8 py-4">
     <h2 class="text-center text-2xl">
       ¿Por qué elegirnos para maquilar tus productos?
     </h2>
@@ -60,5 +97,24 @@ const argumentItems = [
         ))
       }
     </div>
-  </div>
+  </section>
+
+  <section class="mx-auto mb-8 max-w-7xl px-8 py-4">
+    <h2 class="text-center text-2xl">Características principales</h2>
+    <div
+      class="mt-8 grid grid-cols-1 justify-items-center gap-6 md:grid-cols-3 md:gap-8"
+    >
+      {
+        featureCards.map((card) => (
+          <FlipCard
+            frontImage={card.frontImage}
+            frontImageAlt={card.frontImageAlt}
+            backImage={card.backImage}
+            backText={card.backText}
+            backImageAlt={card.backImageAlt}
+          />
+        ))
+      }
+    </div>
+  </section>
 </BaseLayout>

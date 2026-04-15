@@ -10,13 +10,15 @@ export default function MenuButton({ open, setOpen }) {
       {open ? (
         <img
           src={CloseMenuIcon.src}
-          alt="Close menu icon"
+          alt=""
+          aria-hidden="true"
           className="linear h-8 w-8 rotate-90 transition-all duration-500"
         />
       ) : (
         <img
           src={MenuIcon.src}
-          alt="Menu icon"
+          alt=""
+          aria-hidden="true"
           className="linear h-8 w-8 rotate-0 transition-all duration-500"
         />
       )}
