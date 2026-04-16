@@ -1,0 +1,12 @@
+---
+const { customerOpinion, customerOpinionName } = Astro.props;
+---
+
+<div
+  class="flex w-full max-w-100 flex-col items-center gap-4 rounded-2xl border-2 border-gray-500 p-4 text-justify shadow-lg"
+>
+  <p class="wrap-break-word text-gray-600">
+    {customerOpinion}
+  </p>
+  <p class="text-center font-bold">{customerOpinionName}</p>
+</div>
