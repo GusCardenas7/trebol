@@ -9,7 +9,8 @@ import FeatureImage2 from "../assets/images/feature2.jpg";
 import BackFeatureImage2 from "../assets/images/backFeature2.png";
 import FeatureImage3 from "../assets/images/feature3.jpg";
 import BackFeatureImage3 from "../assets/images/backFeature3.png";
-import CustomerOpinion from "../components/ui/customerOpinion.astro";
+import CustomerOpinion from "../components/ui/CustomerOpinion.astro";
+import BottomBanner from "../components/layout/BottomBanner.astro";
 
 const pageTitle = "Inicio";
 const heroText = "Trébol - Colecciones, dispositivos electrónicos y más";
@@ -75,8 +76,10 @@ const argumentItems = [
     typewriterSpeed={typewriterSpeed}
     typewriterPause={typewriterPause}
   />
-  <section class="mx-auto max-w-7xl px-8 py-4">
-    <h2 class="text-center text-2xl font-bold">
+  <section
+    class="timeline-view animate-zoom-in animate-range-entry mx-auto max-w-7xl px-8 py-4"
+  >
+    <h2 class="mt-4 text-center text-2xl font-bold">
       ¿Por qué elegirnos para maquilar tus productos?
     </h2>
     <div class="mt-6 grid grid-cols-1 gap-4 md:mt-8 md:grid-cols-3 md:gap-6">
@@ -100,7 +103,9 @@ const argumentItems = [
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-8 py-4">
+  <section
+    class="timeline-view animate-zoom-in animate-range-entry mx-auto max-w-7xl px-8 py-4"
+  >
     <h2 class="text-center text-2xl font-bold">Características principales</h2>
     <div
       class="mt-8 grid grid-cols-1 justify-items-center gap-6 md:grid-cols-3 md:gap-8"
@@ -119,12 +124,14 @@ const argumentItems = [
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-8 py-4">
+  <section
+    class="timeline-view animate-zoom-in animate-range-entry mx-auto max-w-7xl px-8 py-4"
+  >
     <h2 class="text-center text-2xl font-bold">
       Lo que opinan nuestros clientes
     </h2>
     <div
-      class="mt-8 grid grid-cols-1 justify-items-center gap-6 md:grid-cols-3 md:gap-8"
+      class="mt-8 mb-6 grid grid-cols-1 justify-items-center gap-6 md:grid-cols-3 md:gap-8"
     >
       <CustomerOpinion
         customerOpinionName="Sra. Teresa Jara Lugo - Cofundadora de CaroFit"
@@ -144,4 +151,10 @@ const argumentItems = [
       />
     </div>
   </section>
+
+  <BottomBanner
+    bannerTitle="¿Listo para empezar?"
+    bannerText="Únete a miles de empresas que ya están transformando su negocio con aion®."
+    bannerButtonText="Solicita una cotización"
+  />
 </BaseLayout>
