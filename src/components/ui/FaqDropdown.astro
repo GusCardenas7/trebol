@@ -1,0 +1,41 @@
+---
+import PlusIcon from "../../assets/icons/plus.svg";
+import MinusIcon from "../../assets/icons/minus.svg";
+
+const { question, answer } = Astro.props;
+---
+
+<div
+  class="accordion-item w-full cursor-pointer gap-2 rounded-2xl bg-white p-8 shadow-lg transition-all duration-300"
+>
+  <div
+    class="accordion-header flex w-full items-center justify-between text-left text-[#7421a8]"
+  >
+    <p class="text-lg md:text-xl">{question}</p>
+
+    <div class="relative h-6 w-6">
+      <img
+        src={PlusIcon.src}
+        alt=""
+        aria-hidden="true"
+        class="accordion-icon-plus absolute inset-0 h-6 w-6 transition-opacity duration-200"
+      />
+      <img
+        src={MinusIcon.src}
+        alt=""
+        aria-hidden="true"
+        class="accordion-icon-minus absolute inset-0 h-6 w-6 opacity-0 transition-opacity duration-200"
+      />
+    </div>
+  </div>
+
+  <div
+    class="accordion-content max-h-0 overflow-hidden text-justify transition-all duration-300"
+  >
+    <p class="text-lg md:text-xl">{answer}</p>
+  </div>
+</div>
+
+<script>
+  import "../../scripts/accordion.js";
+</script>
