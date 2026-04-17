@@ -12,7 +12,6 @@ export default function NavLinks({ open }) {
       {navItems.map((link) => (
         <a
           key={link.id}
-          onClick={() => setOpen(false)}
           aria-label={link.label}
           href={link.url}
           className="inline-block w-fit hover:opacity-80"

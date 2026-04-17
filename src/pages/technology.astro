@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/layout/Hero.astro";
+import FlipCard from "../components/ui/FlipCard.astro";
+import TechnologyImage1 from "../assets/images/technology1.png";
+import TechnologyImage2 from "../assets/images/technology2.png";
+import TechnologyImage3 from "../assets/images/technology3.png";
+import TechnologyImage4 from "../assets/images/technology4.png";
+import TechnologyImage5 from "../assets/images/technology5.png";
+import TechnologyImage6 from "../assets/images/technology6.png";
+
+const pageTitle = "Tecnología";
+const heroText = "Nuestras Tecnologías";
+const typewriterText =
+  "Cuando decimos que nuestros procesos tienen tecnología en el ADN, ¡es porque nos lo tomamos en serio!";
+const typewriterSpeed = 80;
+const typewriterPause = 1000;
+
+const technologyCards = [
+  {
+    id: 0,
+    frontImage: TechnologyImage1,
+    frontImageAlt: "Technology image 1",
+    backText:
+      "Las cápsulas son una forma conveniente y eficiente de consumir suplementos alimenticios, proporcionando una dosis precisa y protegiendo los ingredientes activos.",
+  },
+  {
+    id: 1,
+    frontImage: TechnologyImage2,
+    frontImageAlt: "Technology image 2",
+    backText:
+      "Utilizamos máquinas de compresión rotativas unicolor y bicolor; nuestra capacidad instalada nos brinda seguridad de oferta a gran escala para satisfacer su demanda a todos los niveles.",
+  },
+  {
+    id: 2,
+    frontImage: TechnologyImage3,
+    frontImageAlt: "Technology image 3",
+    backText:
+      "Los polvos tienen aplicaciones muy versátiles y multiproducto; puede conocer nuestras diferentes formas de empaque y portabilidad.",
+  },
+  {
+    id: 3,
+    frontImage: TechnologyImage4,
+    frontImageAlt: "Technology image 4",
+    backText:
+      "El proceso de fabricación de bebidas líquidas implica una serie de pasos complejos y una gran variedad de tecnologías para garantizar que el producto final sea seguro, de alta calidad y cumpla con los requisitos del cliente.",
+  },
+  {
+    id: 4,
+    frontImage: TechnologyImage5,
+    frontImageAlt: "Technology image 5",
+    backText:
+      "Las tecnologías de mezcla, gelificación, control de viscosidad y envasado juegan un papel crucial en la creación de geles eficaces y estables, ya sea para aplicaciones farmacéuticas, cosméticas o alimenticias.",
+  },
+  {
+    id: 5,
+    frontImage: TechnologyImage6,
+    frontImageAlt: "Technology image 6",
+    backText:
+      "Las cremas son un producto que se basa en la combinación de ingredientes activos e inactivos mediante un proceso de emulsión.",
+  },
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <Hero
+    heroText={heroText}
+    typewriterText={typewriterText}
+    typewriterSpeed={typewriterSpeed}
+    typewriterPause={typewriterPause}
+  />
+  <section class="animate-fade-in mx-auto max-w-7xl px-8 py-4">
+    <h2 class="mt-4 text-center text-2xl font-bold">Tecnologías Clave</h2>
+    <div
+      class="mt-6 grid grid-cols-1 justify-items-center gap-4 md:mt-8 md:grid-cols-3 md:gap-6"
+    >
+      {
+        technologyCards.map((card) => (
+          <FlipCard
+            frontImage={card.frontImage}
+            frontImageAlt={card.frontImageAlt}
+            backText={card.backText}
+            class="h-110 w-full max-w-80"
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
