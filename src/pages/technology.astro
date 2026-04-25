@@ -2,12 +2,16 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/layout/Hero.astro";
 import FlipCard from "../components/ui/FlipCard.astro";
+import InformationCard from "../components/ui/InformationCard.astro";
+import ClippedImageCard from "../components/ui/ClippedImageCard.astro";
 import TechnologyImage1 from "../assets/images/technology1.png";
 import TechnologyImage2 from "../assets/images/technology2.png";
 import TechnologyImage3 from "../assets/images/technology3.png";
 import TechnologyImage4 from "../assets/images/technology4.png";
 import TechnologyImage5 from "../assets/images/technology5.png";
 import TechnologyImage6 from "../assets/images/technology6.png";
+import DiagonalImage1 from "../assets/images/diagonalImage1.jpg";
+import DiagonalImage2 from "../assets/images/diagonalImage2.jpg";
 
 const pageTitle = "Tecnología";
 const heroText = "Nuestras Tecnologías";
@@ -60,6 +64,59 @@ const technologyCards = [
       "Las cremas son un producto que se basa en la combinación de ingredientes activos e inactivos mediante un proceso de emulsión.",
   },
 ];
+
+const toolCards = [
+  {
+    id: 0,
+    title: "Tecnología de punta en la producción",
+    description: "Maquinaria de última generación.",
+  },
+  {
+    id: 1,
+    title: "Sistemas de información",
+    description: "Conoce el proceso de tus productos en tiempo real.",
+  },
+  {
+    id: 2,
+    title: "Trazabilidad",
+    description:
+      "Un sistema que siempre permitirá conocer todas las variables de tus productos.",
+  },
+  {
+    id: 3,
+    title: "Certificaciones",
+    description: "BPM e ISO.",
+  },
+  {
+    id: 4,
+    title: "Cumplimiento de la regulación de la industria",
+    description: "Cumplimos con todo lo que requiere la autoridad y más.",
+  },
+  {
+    id: 5,
+    title: "Personal calificado",
+    description: "Todo el personal cuenta con certificación en su proceso.",
+  },
+];
+
+const resourceCards = [
+  {
+    id: 0,
+    title: "Capacidad Operativa",
+    description:
+      "Desde 500 piezas hasta 1 millón, tu creatividad, nuestro reto.",
+    image: DiagonalImage1,
+    imageAlt: "Resource image 1",
+  },
+  {
+    id: 1,
+    title: "Software",
+    description:
+      "El excel y las plataformas nativas quedaron atrás, nos gestionamos con un MRP y CRM end to end.",
+    image: DiagonalImage2,
+    imageAlt: "Resource image 2",
+  },
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -81,6 +138,45 @@ const technologyCards = [
             frontImageAlt={card.frontImageAlt}
             backText={card.backText}
             class="h-110 w-full max-w-80"
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <div class="bg-[#e5e7eb]">
+    <section class="animate-fade-in mx-auto max-w-7xl px-8 py-4">
+      <h2 class="mt-4 text-center text-2xl font-bold">Nuestras Herramientas</h2>
+      <div
+        class="mt-6 mb-6 grid grid-cols-1 justify-items-center gap-4 md:mt-8 md:grid-cols-3 md:gap-6"
+      >
+        {
+          toolCards.map((card) => (
+            <InformationCard
+              title={card.title}
+              description={card.description}
+              bgColor={"bg-white"}
+              titleColor={"text-[#2f74ed]"}
+              descriptionColor={"text-black"}
+            />
+          ))
+        }
+      </div>
+    </section>
+  </div>
+
+  <section class="animate-fade-in mx-auto max-w-7xl px-8 py-4">
+    <h2 class="mt-4 text-center text-2xl font-bold">Nuestros Recursos</h2>
+    <div
+      class="mt-6 mb-6 grid grid-cols-1 justify-items-center gap-4 md:mt-8 md:grid-cols-2 md:gap-6"
+    >
+      {
+        resourceCards.map((card) => (
+          <ClippedImageCard
+            title={card.title}
+            description={card.description}
+            image={card.image}
+            imageAlt={card.imageAlt}
           />
         ))
       }

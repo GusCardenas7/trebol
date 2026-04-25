@@ -17,6 +17,30 @@ const heroText = "Trébol - Colecciones, dispositivos electrónicos y más";
 const typewriterText = "Conseguimos todo lo que necesitas";
 const typewriterSpeed = 80;
 const typewriterPause = 1000;
+const bannerTitle = "¿Listo para empezar?";
+const bannerText =
+  "Únete a miles de empresas que ya están transformando su negocio con aion®.";
+const bannerButtonText = "Solicita una cotización";
+
+const argumentItems = [
+  [
+    "Su visión, nuestra misión",
+    "Calidad garantizada en todo momento",
+    "Laboratorio propio de Desarrollo de Nuevos Productos",
+    "Servicio y atención personalizada",
+  ],
+  [
+    "Innovación en cada producto",
+    "Más de 3 décadas de experiencia",
+    "Centro de Ingeniería de pruebas propio",
+    "Ofrecemos un paquete completo en tus maquilas",
+  ],
+  [
+    "Proceso ágil y eficiente",
+    "Instalaciones Certificadas",
+    "Laboratorio de análisis de Calidad Propio",
+  ],
+];
 
 const featureCards = [
   {
@@ -48,24 +72,31 @@ const featureCards = [
   },
 ];
 
-const argumentItems = [
-  [
-    "Su visión, nuestra misión",
-    "Calidad garantizada en todo momento",
-    "Laboratorio propio de Desarrollo de Nuevos Productos",
-    "Servicio y atención personalizada",
-  ],
-  [
-    "Innovación en cada producto",
-    "Más de 3 décadas de experiencia",
-    "Centro de Ingeniería de pruebas propio",
-    "Ofrecemos un paquete completo en tus maquilas",
-  ],
-  [
-    "Proceso ágil y eficiente",
-    "Instalaciones Certificadas",
-    "Laboratorio de análisis de Calidad Propio",
-  ],
+const customerOpinions = [
+  {
+    id: 0,
+    name: "Sra. Teresa Jara Lugo - Cofundadora de CaroFit",
+    comment:
+      '"En Productos CaroFit hemos encontrado en el equipo de Pasiguaro (ahora aion®) un gran aliado para desarrollar nuestra línea de suplementos. Desde el colágeno hasta cada uno de nuestros productos, hemos trabajado juntos para asegurar la calidad y efectividad que nuestros clientes esperan. Nos sentimos respaldados en cada paso del proceso, con un equipo profesional y comprometido que entiende nuestras necesidades. Es un gusto trabajar con personas que comparten nuestra visión de bienestar y que aportan tanto valor a nuestro proyecto."',
+  },
+  {
+    id: 1,
+    name: "Dra. Anavic Gamiño Cervantes - CEO de productos Nutrición Avanzada 2000",
+    comment:
+      '"Pasiguaro, ahora aion® estuvo presente en el desarrollo y en el crecimiento de nuestra empresa desde un principio con los estudios básicos de Formulación y Tabla Nutrimental para nuestras etiquetas y posteriormente nos acompañaron en nuestro proceso de crecimiento cuando tuvimos que aumentar, duplicar y triplicar nuestra producción cuidaron de todos los temas de contaminación de las líneas de manufactura para que nuestro producto pudiera ser 100% confiable."',
+  },
+  {
+    id: 2,
+    name: "Joseana Cyntia Garcia Sanchez - Kukamonga",
+    comment:
+      '"Pasiguaro (ahora aion®) ha desempeñado un papel fundamental en nuestra empresa, asumiendo una parte significativa de los procesos productivos. Su colaboración nos ha permitido reducir costos y alcanzar nuestros objetivos de manera eficiente. Confiar en su profesionalismo y en su compromiso ha sido clave para nuestro éxito y ha marcado el rumbo de nuestro crecimiento. ¡Gracias por ser un aliado estratégico!"',
+  },
+  {
+    id: 3,
+    name: "Lic. Lidia García - Directora General de Holistic Life",
+    comment:
+      '"Con Pasiguaro ahora aion® encontré un aliado profesional y confiable para mi negocio; con el trayecto de los años hemos logrado el desarrollo de diversas formulaciones de alta calidad, innovadores y funcionales, cubriendo siempre nuestras expectativas. Considero a aion® como sinónimo de Confianza."',
+  },
 ];
 ---
 
@@ -102,7 +133,7 @@ const argumentItems = [
   </section>
 
   <section
-    class="timeline-view animate-zoom-in animate-range-entry mx-auto max-w-7xl px-8 py-4"
+    class="timeline-view animate-blurred-fade-in animate-range-entry mx-auto max-w-7xl px-8 py-4"
   >
     <h2 class="text-center text-2xl font-bold">Características principales</h2>
     <div
@@ -124,7 +155,7 @@ const argumentItems = [
   </section>
 
   <section
-    class="timeline-view animate-zoom-in animate-range-entry mx-auto max-w-7xl px-8 py-4"
+    class="timeline-view animate-blurred-fade-in animate-range-entry mx-auto max-w-7xl px-8 py-4"
   >
     <h2 class="text-center text-2xl font-bold">
       Lo que opinan nuestros clientes
@@ -132,28 +163,17 @@ const argumentItems = [
     <div
       class="mt-8 mb-6 grid grid-cols-1 justify-items-center gap-6 md:grid-cols-3 md:gap-8"
     >
-      <CustomerOpinion
-        customerOpinionName="Sra. Teresa Jara Lugo - Cofundadora de CaroFit"
-        customerOpinion='"En Productos CaroFit hemos encontrado en el equipo de Pasiguaro (ahora aion®) un gran aliado para desarrollar nuestra línea de suplementos. Desde el colágeno hasta cada uno de nuestros productos, hemos trabajado juntos para asegurar la calidad y efectividad que nuestros clientes esperan. Nos sentimos respaldados en cada paso del proceso, con un equipo profesional y comprometido que entiende nuestras necesidades. Es un gusto trabajar con personas que comparten nuestra visión de bienestar y que aportan tanto valor a nuestro proyecto."'
-      />
-      <CustomerOpinion
-        customerOpinionName="Dra. Anavic Gamiño Cervantes - CEO de productos Nutrición Avanzada 2000"
-        customerOpinion='"Pasiguaro, ahora aion® estuvo presente en el desarrollo y en el crecimiento de nuestra empresa desde un principio con los estudios básicos de Formulación y Tabla Nutrimental para nuestras etiquetas y posteriormente nos acompañaron en nuestro proceso de crecimiento cuando tuvimos que aumentar, duplicar y triplicar nuestra producción cuidaron de todos los temas de contaminación de las líneas de manufactura para que nuestro producto pudiera ser 100% confiable."'
-      />
-      <CustomerOpinion
-        customerOpinionName="Joseana Cyntia Garcia Sanchez - Kukamonga"
-        customerOpinion='"Pasiguaro (ahora aion®) ha desempeñado un papel fundamental en nuestra empresa, asumiendo una parte significativa de los procesos productivos. Su colaboración nos ha permitido reducir costos y alcanzar nuestros objetivos de manera eficiente. Confiar en su profesionalismo y en su compromiso ha sido clave para nuestro éxito y ha marcado el rumbo de nuestro crecimiento. ¡Gracias por ser un aliado estratégico!"'
-      />
-      <CustomerOpinion
-        customerOpinionName="Lic. Lidia García - Directora General de Holistic Life"
-        customerOpinion='"Con Pasiguaro ahora aion® encontré un aliado profesional y confiable para mi negocio; con el trayecto de los años hemos logrado el desarrollo de diversas formulaciones de alta calidad, innovadores y funcionales, cubriendo siempre nuestras expectativas. Considero a aion® como sinónimo de Confianza."'
-      />
+      {
+        customerOpinions.map((customer) => (
+          <CustomerOpinion name={customer.name} comment={customer.comment} />
+        ))
+      }
     </div>
   </section>
 
   <BottomBanner
-    bannerTitle="¿Listo para empezar?"
-    bannerText="Únete a miles de empresas que ya están transformando su negocio con aion®."
-    bannerButtonText="Solicita una cotización"
+    bannerTitle={bannerTitle}
+    bannerText={bannerText}
+    bannerButtonText={bannerButtonText}
   />
 </BaseLayout>

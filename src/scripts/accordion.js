@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initAccordion() {
+  console.log("initAccordion"); // Debug en producción
   const items = document.querySelectorAll(".accordion-item");
 
   function closeAll() {
@@ -16,6 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   items.forEach((item) => {
+    if (item.dataset.initialized) return;
+    item.dataset.initialized = "true";
+
     item.addEventListener("click", (e) => {
       e.stopPropagation();
 
@@ -38,7 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.addEventListener("click", () => {
-    closeAll();
-  });
-});
+  if (!document.body.dataset.accordionGlobal) {
+    document.body.dataset.accordionGlobal = "true";
+
+    document.addEventListener("click", () => {
+      closeAll();
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", initAccordion);
+document.addEventListener("astro:page-load", initAccordion);
